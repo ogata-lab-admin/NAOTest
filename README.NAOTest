@@ -10,9 +10,13 @@
 #   --module-desc='NAO RTC Test Module' --module-version=1.0.0 --module-vendor=Ogata Lab Waseda Univ 
 #   --module-category=Robo --module-comp-type=STATIC 
 #   --module-act-type=PERIODIC --module-max-inst=1 
-#   --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl 
+#   --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl --consumer-idl=/Users/ysuga/rtm/idl/NAO.idl 
 #   --consumer=NAO_srv:ALMotion:ssr::ALMotion 
 #   --consumer=NAO_srv:ALTextToSpeech:ssr::ALTextToSpeech 
+#   --consumer=NAO_srv:ALBehaviorManager:ssr::ALBehaviorManager 
+#   --consumer=NAO_srv:ALVideoDevice:ssr::ALVideoDevice 
+#   --consumer=NAO_srv:ALMemory:ssr::ALMemory 
+#   --consumer=NAO_srv:ALLeds:ssr::ALLeds 
 
 
 ======================================================================
@@ -98,6 +102,42 @@ Lang Type:
 		[Service Consumer Interfaces]
 		Name:          ALTextToSpeech
 		Type:          ssr::ALTextToSpeech
+		Description:   
+		Argument:      
+		Return Value:  
+		Exception:     
+		PreCondition:  
+		PostCondition: 
+		[Service Consumer Interfaces]
+		Name:          ALBehaviorManager
+		Type:          ssr::ALBehaviorManager
+		Description:   
+		Argument:      
+		Return Value:  
+		Exception:     
+		PreCondition:  
+		PostCondition: 
+		[Service Consumer Interfaces]
+		Name:          ALVideoDevice
+		Type:          ssr::ALVideoDevice
+		Description:   
+		Argument:      
+		Return Value:  
+		Exception:     
+		PreCondition:  
+		PostCondition: 
+		[Service Consumer Interfaces]
+		Name:          ALMemory
+		Type:          ssr::ALMemory
+		Description:   
+		Argument:      
+		Return Value:  
+		Exception:     
+		PreCondition:  
+		PostCondition: 
+		[Service Consumer Interfaces]
+		Name:          ALLeds
+		Type:          ssr::ALLeds
 		Description:   
 		Argument:      
 		Return Value:  

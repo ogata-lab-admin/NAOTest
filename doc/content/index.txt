@@ -118,6 +118,10 @@ Name            Type        Data type                      Purpose
 =============== =========== ============================== =======
 ALMotion        ServicePort ssr::ALMotion                  
 ALTextToSpeech  ServicePort ssr::ALTextToSpeech            
+ALBehaviorManager ServicePort ssr::ALBehaviorManager         
+ALVideoDevice   ServicePort ssr::ALVideoDevice             
+ALMemory        ServicePort ssr::ALMemory                  
+ALLeds          ServicePort ssr::ALLeds                    
 =============== =========== ============================== =======
 
 Examples

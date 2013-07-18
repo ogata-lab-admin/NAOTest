@@ -22,6 +22,10 @@
     <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="LEFT" rtc:name="NAO_srv">
         <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="motion" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALMotion" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALMotion" rtc:direction="Required" rtc:name="ALMotion"/>
         <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="textToSpeech" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALTextToSpeech" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALTextToSpeech" rtc:direction="Required" rtc:name="ALTextToSpeech"/>
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="behaviorManager" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALBehaviorManager" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALBehaviorManager" rtc:direction="Required" rtc:name="ALBehaviorManager"/>
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="videoDevice" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALVideoDevice" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALVideoDevice" rtc:direction="Required" rtc:name="ALVideoDevice"/>
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="memory" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALMemory" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALMemory" rtc:direction="Required" rtc:name="ALMemory"/>
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="leds" rtc:path="/Users/ysuga/rtm/idl" rtc:type="ssr::ALLeds" rtc:idlFile="/Users/ysuga/rtm/idl/NAO.idl" rtc:instanceName="ALLeds" rtc:direction="Required" rtc:name="ALLeds"/>
     </rtc:ServicePorts>
     <rtc:Language xsi:type="rtcExt:language_ext" rtc:kind="Python"/>
 </rtc:RtcProfile>

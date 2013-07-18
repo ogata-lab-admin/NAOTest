@@ -110,6 +110,10 @@ NAOTestは ``NAOTestComp`` を実行（ ``${prefix}/components/bin`` に
 =============== =========== ============================== ====
 ALMotion        ServicePort ssr::ALMotion                  
 ALTextToSpeech  ServicePort ssr::ALTextToSpeech            
+ALBehaviorManager ServicePort ssr::ALBehaviorManager         
+ALVideoDevice   ServicePort ssr::ALVideoDevice             
+ALMemory        ServicePort ssr::ALMemory                  
+ALLeds          ServicePort ssr::ALLeds                    
 =============== =========== ============================== ====
 
 例

@@ -28,6 +28,10 @@ import NAO_idl
 # <rtc-template block="consumer_import">
 import ssr, ssr__POA
 import ssr, ssr__POA
+import ssr, ssr__POA
+import ssr, ssr__POA
+import ssr, ssr__POA
+import ssr, ssr__POA
 
 
 # </rtc-template>
@@ -75,6 +79,18 @@ class NAOTest(OpenRTM_aist.DataFlowComponentBase):
 		"""
 		"""
 		self._textToSpeech = OpenRTM_aist.CorbaConsumer(interfaceType=ssr.ALTextToSpeech)
+		"""
+		"""
+		self._behaviorManager = OpenRTM_aist.CorbaConsumer(interfaceType=ssr.ALBehaviorManager)
+		"""
+		"""
+		self._videoDevice = OpenRTM_aist.CorbaConsumer(interfaceType=ssr.ALVideoDevice)
+		"""
+		"""
+		self._memory = OpenRTM_aist.CorbaConsumer(interfaceType=ssr.ALMemory)
+		"""
+		"""
+		self._leds = OpenRTM_aist.CorbaConsumer(interfaceType=ssr.ALLeds)
 
 		# initialize of configuration-data.
 		# <rtc-template block="init_conf_param">
@@ -103,6 +119,10 @@ class NAOTest(OpenRTM_aist.DataFlowComponentBase):
 		# Set service consumers to Ports
 		self._NAO_srvPort.registerConsumer("ALMotion", "ssr::ALMotion", self._motion)
 		self._NAO_srvPort.registerConsumer("ALTextToSpeech", "ssr::ALTextToSpeech", self._textToSpeech)
+		self._NAO_srvPort.registerConsumer("ALBehaviorManager", "ssr::ALBehaviorManager", self._behaviorManager)
+		self._NAO_srvPort.registerConsumer("ALVideoDevice", "ssr::ALVideoDevice", self._videoDevice)
+		self._NAO_srvPort.registerConsumer("ALMemory", "ssr::ALMemory", self._memory)
+		self._NAO_srvPort.registerConsumer("ALLeds", "ssr::ALLeds", self._leds)
 		
 		# Set CORBA Service Ports
 		self.addPort(self._NAO_srvPort)
@@ -159,13 +179,12 @@ class NAOTest(OpenRTM_aist.DataFlowComponentBase):
 	#	# @return RTC::ReturnCode_t
 	#	#
 	#	#
-	def onActivated(self, ec_id):
-		print 'onActivated called'
-
-		return RTC.RTC_OK
-
-	#	##
+	#def onActivated(self, ec_id):
 	#
+	#	return RTC.RTC_OK
+	
+	#	##
+	#	#
 	#	# The deactivated action (Active state exit action)
 	#	# former rtc_active_exit()
 	#	#
@@ -190,10 +209,12 @@ class NAOTest(OpenRTM_aist.DataFlowComponentBase):
 	#	#
 	def onExecute(self, ec_id):
 		try:
-			self._textToSpeech._ptr().say("Hello World")
+			#self._textToSpeech._ptr().say("Hello, I'm NAO")
+			self._behaviorManager._ptr().runBehavior("sayhello01")
 			time.sleep(5)
 		except Exception, e:
 			print e
+
 		return RTC.RTC_OK
 	
 	#	##
