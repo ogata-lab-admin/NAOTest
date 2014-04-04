@@ -207,11 +207,47 @@ class NAOTest(OpenRTM_aist.DataFlowComponentBase):
 	#	# @return RTC::ReturnCode_t
 	#	#
 	#	#
+
+	def show_help(self):
+		print """
+help : Show This Help
+say  : Usage "say Hello world", then say "Hello world"
+moveTo : Move to the specific position (initial position is (0, 0, 0)) Usage "moveTo x y vtheta" 
+moveToward : Move specific speed (vx, vy, vtheta) Usage "moveToward vx, vy, vtheta"
+stop : Stop moving
+behave : Call Behavior which is saved with Choregraph a priori
+"""
+
 	def onExecute(self, ec_id):
 		try:
-			#self._textToSpeech._ptr().say("Hello, I'm NAO")
-			self._behaviorManager._ptr().runBehavior("sayhello01")
-			time.sleep(5)
+			c = raw_input('# Input Command: (help for help)')
+			cmds = c.split()
+			
+			if cmds[0] == 'help':
+				self.show_help()
+			elif cmds[0] == 'say':
+				text = ""
+				for c in cmds[1:]:
+					text = text + ' ' + c
+				self._textToSpeech._ptr().say(text)
+			elif cmds[0] == 'behave':
+				self._behaviorManager._ptr().runBehavior(cmds[1])
+			elif cmds[0] == 'stop':
+				self._motion._ptr().stopMove()
+			elif cmds[0] == 'moveToward':
+				if len(cmds) == (1+3):
+					vx = float(cmds[1])
+					vy = float(cmds[2])
+					vz = float(cmds[3])
+					self._motion._ptr().moveToward(vx, vy, vz)
+			elif cmds[0] == 'moveTo':
+				if len(cmds) == (1+3):
+					x = float(cmds[1])
+					y = float(cmds[2])
+					z = float(cmds[3])
+					self._motion._ptr().moveTo(x, y, z)
+
+
 		except Exception, e:
 			print e
 
